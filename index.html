@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" class="calculator">
+          <input type="text" readonly class="value">
+          <span id="c" class="num clear">c</span>
+          <span id="/" class="num">/</span>
+          <span id="*" class="num">*</span>
+          <span id="seven" class="num">7</span>
+          <span id="eight" class="num">8</span>
+          <span id="nine" class="num">9</span>
+          <span id="-" class="num">-</span>
+          <span id="four" class="num">4</span>
+          <span id="five" class="num">5</span>
+          <span id="six" class="num">6</span>
+          <span id="+" class="num plus ">+</span>
+          <span id="one" class="num">1</span>
+          <span id="two" class="num">2</span>
+          <span id="three" class="num">3</span>
+          <span id="zero" class="num">0</span>
+          <span id="dublZero" class="num">00</span>
+          <span id="dot" class="num">.</span>
+          <button type="submit"><span class="num equal">=</span></button>
+      </form>
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".container"), {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+
+	});
+
+	VanillaTilt.init(document.querySelectorAll(".container"));
+</script>
+    <script src="index.js"></script>
+  </body>
+</html>
