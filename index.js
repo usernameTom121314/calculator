@@ -15,10 +15,7 @@ symbols.forEach((btn)=>{
         if(value.value == '0') value.value = ''
         if(btn.innerHTML === 'c') value.value = '0' 
         else if(btn.innerHTML == '=') value.value = eval(value.value)
+        else if(value.value == '0' && btn.innerHTML == '+') value.value += '0' + btn.innerHTML
         else value.value += btn.innerHTML  
     })
 }) 
-
-
-
-

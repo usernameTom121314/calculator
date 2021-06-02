@@ -33,14 +33,33 @@
     </div>
     <script type="text/javascript" src="vanilla-tilt.js"></script>
 <script type="text/javascript">
-	VanillaTilt.init(document.querySelector(".container"), {
+   let isMobile = {
+	  Android: function() {return navigator.userAgent.match(/Android/i);},
+	  BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+	  iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+	  Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+	  Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+	  any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+  };
+  let body=document.querySelector('body');
+  if(isMobile.any()){
+    VanillaTilt.init(document.querySelector("none"), {
+		max: 0,
+		speed: 0,
+        glare: false,
+        "max-glare": 0.2,
+	});
+	VanillaTilt.init(document.querySelectorAll(".none"));
+    } else{
+    VanillaTilt.init(document.querySelector(".container"), {
 		max: 25,
 		speed: 400,
         glare: true,
         "max-glare": 0.2,
 	});
-
 	VanillaTilt.init(document.querySelectorAll(".container"));
+  }
+	
 </script>
   <script src="index.js"></script>
   </body>
